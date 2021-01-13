@@ -80,10 +80,10 @@ WSGI_APPLICATION = 'BlogDjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgres',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'blog_django',
         'HOST': '127.0.0.1',
-        'PORT ': '3306',
+        'PORT ': '5432',
         'USER': 'postgres',
         'PASSAWORD': '070707postgres',
 
@@ -129,6 +129,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
