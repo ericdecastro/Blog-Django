@@ -144,3 +144,5 @@ MESSAGE_TAGS = {
     constants.ERROR: 'alert-danger',
 
 }
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
