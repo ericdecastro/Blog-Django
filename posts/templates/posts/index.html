@@ -3,47 +3,46 @@
 {% block conteudo %}
 
 <!-- CONTENT -->
-            <div class="card-columns mt-4">
-                {% for post in posts %}
-                <div class="card mb-4">
+    <div class="card-columns mt-4">
+        {% for post in posts %}
+        <div class="card mb-4">
 
-                    {% if post.imagem_post %}
+            {% if post.imagem_post %}
+            <a href="{% url 'post_detalhes' post.id %}">
+                <img class="card-img-top"
+                     src="{{ post.imagem_post.url }}"
+                     alt="{{ post.titulo_post }}">
+            </a>
+            {% endif %}
+
+            <div class="card-body">
+                <h4 class="card-title">
                     <a href="{% url 'post_detalhes' post.id %}">
-                        <img class="card-img-top"
-                             src="{{ post.imagem_post.url }}"
-                             alt="{{ post.titulo_post }}">
+                        {{ post.titulo_post }}
                     </a>
-                    {% endif %}
+                </h4>
+                <p class="card-text">{{post.excerto_post}}</p>
+                <p class="card-text">
+                    <small class="text-muted">{{ post.data_post | naturalday | title}}
+                        |
+                        {% if post.comentario_set.count == 1 %}
+                            {{post.numero_comentarios}} comentário
+                        {% else %}
+                            {{post.numero_comentarios}} comentários
+                        {% endif %}
+                        | {{post.categoria_post}}</small>
+                </p>
 
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="{% url 'post_detalhes' post.id %}">
-                                {{ post.titulo_post }}
-                            </a>
-                        </h4>
-                        <p class="card-text">{{post.excerto_post}}</p>
-                        <p class="card-text">
-                            <small class="text-muted">{{ post.data_post | naturalday | title}}
-                                |
-                                {% if post.comentario_set.count == 1 %}
-                                    {{post.numero_comentarios}} comentário
-                                {% else %}
-                                    {{post.numero_comentarios}} comentários
-                                {% endif %}
-                                | {{post.categoria_post}}</small>
-                        </p>
-
-                        <div class="text-right">
-                            <a href="{% url 'post_detalhes' post.id %}" class="btn btn-outline-dark">Ler mais...</a>
-                        </div>
-                    </div>
+                <div class="text-right">
+                    <a href="{% url 'post_detalhes' post.id %}" class="btn btn-outline-dark">Ler mais...</a>
                 </div>
-                {% endfor %}
-
             </div>
+        </div>
+        {% endfor %}
 
+    </div>
 <!--/CONTENT-->
-    {% include 'parciais/_pagination.html' %}
-    <br>
-    <br>
+    <div class="mb-3">
+        {% include 'parciais/_pagination.html' %}
+    </div>
 {% endblock %}
