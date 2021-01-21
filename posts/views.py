@@ -7,10 +7,11 @@ from comentarios.forms import FormComentario
 from comentarios.models import Comentario
 from django.contrib import messages
 
+
 class PostIndex(ListView):
     model = Post
     template_name = 'posts/index.html'
-    paginate_by = 2
+    paginate_by = 3
     context_object_name = 'posts'
 
     def get_queryset(self):
@@ -64,6 +65,14 @@ class PostDetalhes(UpdateView):
     form_class = FormComentario
     context_object_name = 'post'
 
+    def get_context_data(self, **kwargs):
+        contexto = super().get_context_data(**kwargs)
+        post = self.get_object()
+        comentarios = Comentario.objects.filter(publicado_comentario=True,
+                                                post_comentario=post.id)
+        contexto['comentarios'] = comentarios
+        return contexto
+
     def form_valid(self, form):
         post = self.get_object()
         comentario = Comentario(**form.cleaned_data)
@@ -75,3 +84,5 @@ class PostDetalhes(UpdateView):
         messages.success(self.request, 'Comentário enviado com sucesso')
 
         return redirect('post_detalhes', pk=post.id)
+
+

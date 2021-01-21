@@ -5,7 +5,7 @@
 <!-- CONTENT -->
             <div class="card-columns mt-4">
                 {% for post in posts %}
-                <div class="card">
+                <div class="card mb-4">
 
                     {% if post.imagem_post %}
                     <a href="{% url 'post_detalhes' post.id %}">
@@ -41,6 +41,9 @@
                 {% endfor %}
 
             </div>
-            <!--/CONTENT-->
+
+<!--/CONTENT-->
     {% include 'parciais/_pagination.html' %}
+    <br>
+    <br>
 {% endblock %}
