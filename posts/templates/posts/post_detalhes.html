@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load humanize %}
 
-{% block titulo %}Detalhes{% endblock %}
+{% block titulo %} {{post.titulo_post | title}} | Blog do Eric{% endblock %}
 {% block conteudo %}
+
 
 <!-- POST -->
 <div class="container">
