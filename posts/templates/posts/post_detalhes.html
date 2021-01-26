@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 {% load humanize %}
+{% load crispy_forms_tags %}
+
 
 {% block titulo %} {{post.titulo_post | title}} | Blog do Eric{% endblock %}
 {% block conteudo %}
 
 
 <!-- POST -->
-<div class="container">
+
     <div class="row pt-5">
         <div class="col-xl"></div>
         <div class="col-xl-8 text-center">
@@ -60,7 +62,7 @@
             <form method="POST" action="#envia_comentario">
                {% csrf_token %}
                 <table class="table">
-                    {{form}}
+                    {{form|crispy}}
                     <tr>
                         <td colspan="2">
                             {% include 'parciais/_messages.html' %}
@@ -74,7 +76,7 @@
         </div>
         <div class="col-xl"></div>
     </div>
-</div>
+
 <br>
 <!-- POST -->
 

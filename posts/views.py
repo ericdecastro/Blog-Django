@@ -6,7 +6,6 @@ from django.db.models import Q, Count, Case, When
 from comentarios.forms import FormComentario
 from comentarios.models import Comentario
 from django.contrib import messages
-from django.db import connection
 
 
 class PostIndex(ListView):
