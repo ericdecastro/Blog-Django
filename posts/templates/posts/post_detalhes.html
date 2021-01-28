@@ -9,8 +9,8 @@
 
 <!-- POST -->
 <div class="content pb-3">
-    <div class="text-center pt-5">
-        <h1 id="titulo-post">{{post.titulo_post}}</h1>
+    <div class="text-center pt-5 pb-2">
+        <h1 class="pb-2" id="titulo-post">{{post.titulo_post}}</h1>
         <p id="excerto-post">{{post.excerto_post}}</p>
         <p class="text-muted mt-4">
             <small>
@@ -23,9 +23,10 @@
 
         {% if post.imagem_post %}
             <img class="img-fluid pb-2" style="width: 800px" src="{{ post.imagem_post.url }}" alt="{{post.titulo_post}}">
+            <hr>
         {% endif %}
 
-        <p id="p-post">{{ post.conteudo_post|safe|linebreaks }}</p>
+        <p>{{ post.conteudo_post|safe|linebreaks }}</p>
 
     </div>
 
