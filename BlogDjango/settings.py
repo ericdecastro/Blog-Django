@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'posts',
     'categorias',
     'comentarios',
-    'django_summernote',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -146,7 +145,5 @@ MESSAGE_TAGS = {
     constants.ERROR: 'alert-danger',
 
 }
-
-X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

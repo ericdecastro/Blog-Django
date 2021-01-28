@@ -10,22 +10,22 @@
 <!-- POST -->
 <div class="content pb-3">
     <div class="text-center pt-5">
-        <h2>{{post.titulo_post}}</h2>
-        <h5>{{post.excerto_post}}</h5>
+        <h1 id="titulo-post">{{post.titulo_post}}</h1>
+        <p id="excerto-post">{{post.excerto_post}}</p>
         <p class="text-muted mt-4">
             <small>
-                {{post.autor_post}} | {{post.data_post}} | {{post.categoria_post}}
+               Por {{post.autor_post}} | {{post.data_post}} | {{post.categoria_post}}
             </small>
         </p>
     </div>
-
-    <div class="text-center pt-3">
+    <hr id="hr-post">
+    <div class="text-justify pt-3">
 
         {% if post.imagem_post %}
             <img class="img-fluid pb-2" style="width: 800px" src="{{ post.imagem_post.url }}" alt="{{post.titulo_post}}">
         {% endif %}
 
-        <p class="justify">{{ post.conteudo_post|safe|linebreaks }}</p>
+        <p id="p-post">{{ post.conteudo_post|safe|linebreaks }}</p>
 
     </div>
 
