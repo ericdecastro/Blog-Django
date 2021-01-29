@@ -9,9 +9,9 @@
 
 <!-- POST -->
 <div class="content pb-3">
-    <div class="text-center pt-5 pb-2">
+    <div class="text-center pt-4 pb-2">
         <h1 class="pb-2" id="titulo-post">{{post.titulo_post}}</h1>
-        <p id="excerto-post">{{post.excerto_post}}</p>
+        <pre id="excerto-post">{{post.excerto_post}}</pre>
         <p class="text-muted mt-4">
             <small>
                Por {{post.autor_post}} | {{post.data_post}} | {{post.categoria_post}}
@@ -19,14 +19,14 @@
         </p>
     </div>
     <hr id="hr-post">
-    <div class="text-justify pt-3">
+    <div class="pt-3">
 
         {% if post.imagem_post %}
             <img class="img-fluid pb-2" style="width: 800px" src="{{ post.imagem_post.url }}" alt="{{post.titulo_post}}">
             <hr>
         {% endif %}
 
-        <p>{{ post.conteudo_post|safe|linebreaks }}</p>
+        <pre>{{ post.conteudo_post }}</pre>
 
     </div>
 
@@ -54,7 +54,7 @@
                     <td colspan="2">
                         {% include 'parciais/_messages.html' %}
 
-                        <input id="envia_comentario" type="submit" class="btn btn-dark"
+                        <input id="envia-comentario" type="submit" class="btn btn-dark"
                             value="Enviar">
                     </td>
                 </tr>
