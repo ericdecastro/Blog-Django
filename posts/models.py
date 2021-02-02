@@ -4,6 +4,13 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 
+def get_full_name(self):
+    return f'{self.first_name} {self.last_name}'
+
+
+User.add_to_class("__str__", get_full_name)
+
+
 class Post(models.Model):
     titulo_post = models.CharField(max_length=255, verbose_name='Título')
     autor_post = models.ForeignKey(User, on_delete=models.DO_NOTHING, verbose_name='Autor')
