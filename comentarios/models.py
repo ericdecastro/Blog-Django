@@ -11,7 +11,7 @@ class Comentario(models.Model):
     comentario = models.TextField()
     usuario_comentario = models.ForeignKey(User, on_delete=models.DO_NOTHING, verbose_name='Usuário', blank=True, null=True)
     data_comentario = models.DateTimeField(default=timezone.now, verbose_name='Data')
-    publicado_comentario = models.BooleanField(default=False, verbose_name='Publicado')
+    publicado_comentario = models.BooleanField(default=True, verbose_name='Publicado')
 
     def __str__(self):
         return self.nome_comentario

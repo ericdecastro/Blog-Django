@@ -170,28 +170,50 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-#jumbotron {
-    background-image: url("/static/fundo_jumbotron.png");
-    background-size: cover;
-    text-align: center;
-    color: white;
+#jumbo_texto {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#h1-jumbo {
-    font-size:80px;
-    font-weight:700;
-}
-
-@media (max-width: 600px) {
-        #h1-jumbo {
-        font-size:50px;
-        font-weight:700;
+@media (max-width: 1500px) {
+    #jumbo_texto {
+        width: 45%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
-@media (max-width: 300px) {
-        #h1-jumbo {
-        font-size:40px;
-        font-weight:700;
+@media (max-width: 991px) {
+    #jumbo_texto {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    #jumbo_texto {
+        width: 80%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    #jumbo_texto {
+        width: 80%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

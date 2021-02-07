@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.http import HttpResponse
+from django.shortcuts import redirect
 from django.views.generic.list import ListView
 from django.views.generic.edit import UpdateView
 from .models import Post
@@ -31,6 +32,11 @@ class PostIndex(ListView):
 class PostBusca(PostIndex):
     template_name = 'posts/post_busca.html'
 
+    def get(self, *args, **kwargs):
+        if not self.request.GET.get('termo'):
+            return redirect('index')
+        return super().get(self.request, *args, **kwargs)
+
     def get_queryset(self):
         qs = super().get_queryset()
         termo = self.request.GET.get('termo')
@@ -45,7 +51,6 @@ class PostBusca(PostIndex):
             Q(excerto_post__icontains=termo) |
             Q(categoria_post__nome_cat__icontains=termo)
         )
-
         return qs
 
 
