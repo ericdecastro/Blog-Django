@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -7,22 +9,30 @@
 </head>
 
 <body>
-{% include 'parciais/_nav.html' %}
-{% include 'parciais/_jumbotron.html' %}
+<div class="outerwrapper">
+    {% include 'parciais/_nav.html' %}
+    {% include 'parciais/_jumbotron.html' %}
+    {% include 'parciais/_subnav.html' %}
 
-<!-- Page Content -->
-<div id="page-container">
-    <div id="content-wrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    {% block conteudo %}{% endblock %}
+    <!-- Page Content -->
+    <div id="page-container">
+        <div id="content-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        {% block conteudo %}{% endblock %}
+                    </div>
                 </div>
             </div>
         </div>
+        {% include 'parciais/_footer.html' %}
     </div>
-    {% include 'parciais/_footer.html' %}
 </div>
+
+<script src="{% static 'vendor/jquery/jquery.slim.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.js' %}"></script>
+
 </body>
 
 </html>

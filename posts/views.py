@@ -33,6 +33,10 @@ class PostBusca(PostIndex):
     template_name = 'posts/post_busca.html'
 
     def get(self, *args, **kwargs):
+        print(self.request.GET)
+        if 'page' in str(self.request.GET.get):
+            print('pagina')
+            return super().get(self.request, *args, **kwargs)
         if not self.request.GET.get('termo'):
             return redirect('index')
         return super().get(self.request, *args, **kwargs)
@@ -90,5 +94,3 @@ class PostDetalhes(UpdateView):
         messages.success(self.request, 'Comentário enviado com sucesso')
 
         return redirect('post_detalhes', pk=post.id)
-
-

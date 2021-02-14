@@ -1,20 +1,37 @@
-@media (min-width: 34em) {
-    .card-columns {
-        -webkit-column-count: 2;
-        -moz-column-count: 2;
-        column-count: 2;
+.card-columns {
+    margin-top: 20px;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 5px;
+}
+
+@media (max-width: 1000px) {
+       .card-columns {
+        margin-top: 20px;
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+
     }
 }
 
-@media (min-width: 62em) {
+@media (max-width: 600px) {
     .card-columns {
-        -webkit-column-count: 3;
-        -moz-column-count: 3;
-        column-count: 3;
+        margin-top: 20px;
+        overflow: hidden;
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: 1fr;
+        grid-column-gap: 5px;
+        grid-row-gap: 5px;
+
     }
 }
-
-
 
 ul.errorlist  {
     list-style-type: none;
@@ -30,33 +47,38 @@ ul.errorlist li {
     font-weight: bold;
 }
 
-
-/*
-@media (min-width: 48em) {
-    .card-columns {
-        -webkit-column-count: 3;
-        -moz-column-count: 3;
-        column-count: 3;
-    }
+body {
+    background-color: #ececec;
 }
 
-
-@media (min-width: 62em) {
-    .card-columns {
-        -webkit-column-count: 4;
-        -moz-column-count: 4;
-        column-count: 4;
-    }
+.outerwrapper {
+    width: 1250px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 50px rgb(0 0 0 / 6%);
 }
 
-@media (min-width: 75em) {
-    .card-columns {
-        -webkit-column-count: 5;
-        -moz-column-count: 5;
-        column-count: 5;
+@media only screen and (min-width: 0px) and (max-width: 1250px) {
+    .outerwrapper {
+        width: 100%;
+        margin: 0 auto;
     }
 }
-*/
+#content-wrap {
+    background-color: white;
+}
+
+.card {
+    border: none;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+    object-fit: contain;
+}
 
 .page-item.active .page-link {
     color: white;
@@ -72,9 +94,15 @@ a {
     color: #343a40;
 }
 
+a:hover {
+    color: #343a40;
+}
+
 .content {
     max-width: 800px;
     margin: auto;
+    background-color: white;
+    padding: 25px;
 }
 
 .justify
@@ -127,9 +155,6 @@ a {
     -webkit-box-shadow: #343a40;
 }
 
-.form-control: {
-    background-color: red;
-}
 
 #conteudo-post {
     font-size: 18px;
@@ -145,6 +170,17 @@ a {
     font-style: italic;
     padding: 10px;
 }
+@media (max-width: 500px) {
+    #excerto-post {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 315px) {
+    #excerto-post {
+        font-size: 16px;
+    }
+}
 
 pre {
     white-space: pre-wrap;
@@ -155,19 +191,10 @@ pre {
     padding: 10px;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  border: 1px solid black;
-  -webkit-text-fill-color: black !important;
-  -webkit-box-shadow: 0 0 0px 1000px white inset;
-  transition: background-color 5000s ease-in-out 0s;
+
+.jumbotron {
+    background-color: white;
+    margin-bottom: 0px;
 }
 
 #jumbo_texto {
@@ -216,4 +243,171 @@ select:-webkit-autofill:focus {
         margin-left: auto;
         margin-right: auto;
     }
+}
+
+#search {
+    background: none;
+    padding: 5px;
+    border: none;
+}
+
+#search:focus {
+    outline:none;
+}
+
+.fa-search {
+    color:white;
+}
+
+.dropdown-menu {
+    border:none;
+    background-color: #343a40;
+    color: grey;
+}
+.dropdown-item {
+    color: grey;
+}
+
+.dropdown-item:hover {
+    color: white;
+    background-color: #343a40;
+}
+
+.navbar-dark {
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    margin-right: 5px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: gray;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: white;
+}
+
+
+.bd-subnavbar {
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+    margin-bottom: 20px;
+}
+
+.subnav-text {
+    font: Open Sans;
+    text-transform: uppercase;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.subnav-text:hover {
+    color: grey;
+    text-decoration: none;
+}
+
+@media (max-width: 430px) {
+    .subnav-text {
+        font-size: 18px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .subnav-text {
+        font-size: 16px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 330px) {
+    .subnav-text {
+        font-size: 14px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 295px) {
+    .subnav-text {
+        font-size: 12px;
+        padding-right: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    pre {
+        font-size: 16px;
+    }
+}
+
+.containersearch .searchbox {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 53px;
+    transition: 0.4s linear;
+    overflow: hidden;
+}
+
+.containersearch .searchbox .searchbox__input {
+    display: block;
+    appearance: none;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    background-color: #343a40;
+    padding: 15px;
+    color: #343a40;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s linear;
+    height: 15px;
+}
+
+.containersearch .searchbox .searchbox__input::placeholder {
+    color: #343a40;
+}
+
+.containersearch .searchbox .searchbox__icon {
+    position: absolute;
+    right: calc(53px / 2);
+    top: 50%;
+    transform: translate(50%, -50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+.containersearch .searchbox .searchbox__icon path {
+    fill: white;
+    transition: 0.4s linear;
+}
+
+.containersearch .searchbox:focus-within {
+    max-width: 300px;
+}
+
+.containersearch .searchbox:focus-within .searchbox__input {
+    background-color: #FFF;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.containersearch .searchbox:focus-within .searchbox__icon path {
+    fill: #24233A;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
 }

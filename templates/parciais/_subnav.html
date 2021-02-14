@@ -1,0 +1,18 @@
+{% load static %}
+
+<!--_nav.html-->
+<div class="container">
+    <nav class="bd-subnavbar">
+        <div class="container d-flex align-items-md-center py-2">
+            <nav class="nav mx-auto" id="subnav-links">
+                <a class="subnav-text" href="{% url 'index' %}">Home</a>
+                <a class="subnav-text" href=#>Sobre</a>
+                <a class="subnav-text" href="{% url 'post_categoria' 'python' %}">Python</a>
+                <a class="subnav-text" href="{% url 'post_categoria' 'django' %}">Django</a>
+                <a class="subnav-text" href="{% url 'post_categoria' 'tecnologia' %}">Tecnologia</a>
+                <a class="subnav-text" href="{% url 'post_categoria' 'sistemas' %}">Sistemas</a>
+            </nav>
+        </div>
+    </nav>
+</div>
+<!--/_nav.html-->
