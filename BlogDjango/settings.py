@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'posts',
+    'accounts',
     'categorias',
     'comentarios',
     'crispy_forms',
@@ -159,3 +160,7 @@ MESSAGE_TAGS = {
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 AXES_FAILURE_LIMIT = 5
+
+LOGIN_URL = 'entrar'
+LOGIN_REDIRECT_URL = 'index'
+

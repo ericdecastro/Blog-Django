@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block titulo %} Entrar{% endblock %}
+
+{% block conteudo %}
+    {% if not user.is_authenticated %}
+        <div class="content">
+            <h1 id="form_h1">Entrar</h1>
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-dark">Entrar</button>
+            </form>
+        </div>
+    {% else %}
+        Você já está logado como {{user}},
+        <a href="{% url 'sair' %}">clique aqui</a> para sair.
+    {% endif %}
+{% endblock %}
