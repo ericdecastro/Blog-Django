@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views.generic.list import ListView
 from django.views.generic.edit import UpdateView
@@ -6,7 +5,6 @@ from .models import Post
 from django.db.models import Q, Count, Case, When
 from comentarios.forms import FormComentario
 from comentarios.models import Comentario
-from django.contrib import messages
 
 
 class PostIndex(ListView):
@@ -86,11 +84,11 @@ class PostDetalhes(UpdateView):
     def form_valid(self, form):
         post = self.get_object()
         comentario = Comentario(**form.cleaned_data)
+
         comentario.post_comentario = post
 
         if self.request.user.is_authenticated:
             comentario.usuario_comentario = self.request.user
         comentario.save()
-        messages.success(self.request, 'Comentário enviado com sucesso')
 
         return redirect('post_detalhes', pk=post.id)

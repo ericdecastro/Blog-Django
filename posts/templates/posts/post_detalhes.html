@@ -35,7 +35,7 @@
         <h2 class="my-3">Comentários ({{comentarios.count}})</h2>
 
         {% for comentario in comentarios %}
-            <h5 class="mb-2 mt-5">{{comentario.nome_comentario}} disse:</h5>
+            <h5 class="mb-2 mt-5">{{comentario.usuario_comentario}} disse:</h5>
             <small class="text-muted">{{comentario.data_comentario}}</small>
             <p class="mb-1">{{comentario.comentario}}</p>
         {% endfor %}
@@ -43,7 +43,7 @@
 
     {% endif %}
 
-
+    {% if user.is_authenticated %}
     <div>
         <h2 class="my-5">Deixe um comentário</h2>
         <form method="POST" action="#envia_comentario">
@@ -61,6 +61,10 @@
             </table>
         </form>
     </div>
+    {% else %}
+        <p>Faça <a href="{% url 'entrar' %}">login</a> para comentar</p>
+    {% endif %}
+
 </div>
 <!-- POST -->
 
