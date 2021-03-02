@@ -12,9 +12,16 @@
                 {{ form|crispy }}
                 <button type="submit" class="btn btn-dark">Entrar</button>
             </form>
+            <div class="border-top pt-3 mt-4">
+                <small class="text-muted">
+                  Não tem uma conta?<a class="ml-1" href="{% url 'cadastro' %}">Inscreva-se</a>
+                </small>
+            </div>
         </div>
+
     {% else %}
         Você já está logado como {{user}},
         <a href="{% url 'sair' %}">clique aqui</a> para sair.
     {% endif %}
+
 {% endblock %}

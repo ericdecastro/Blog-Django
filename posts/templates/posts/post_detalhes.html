@@ -32,28 +32,31 @@
 
     {% if comentarios %}
     <div class="pt-3">
-        <h2 class="my-3">Comentários ({{comentarios.count}})</h2>
-
+        <h2 class="my-3 mb-4">{{comentarios.count}} Comentários </h2>
+        <hr>
         {% for comentario in comentarios %}
-            <h5 class="mb-2 mt-5">{{comentario.usuario_comentario}} disse:</h5>
+            <h5 class="mb-2 mt-2">{{comentario.usuario_comentario}} disse:</h5>
             <small class="text-muted">{{comentario.data_comentario}}</small>
             <p class="mb-1">{{comentario.comentario}}</p>
+            <hr>
         {% endfor %}
-    </div>
 
+    </div>
+    {% else %}
+        <hr>
+        <p>Nenhum comentário ainda</p>
     {% endif %}
 
     {% if user.is_authenticated %}
+    <h4 class="my-5">Deixe um comentário</h4>
     <div>
-        <h2 class="my-5">Deixe um comentário</h2>
+
         <form method="POST" action="#envia_comentario">
            {% csrf_token %}
             <table class="table">
                 {{form|crispy}}
                 <tr>
                     <td colspan="2">
-                        {% include 'parciais/_messages.html' %}
-
                         <input id="envia-comentario" type="submit" class="btn btn-dark"
                             value="Enviar">
                     </td>
@@ -62,7 +65,8 @@
         </form>
     </div>
     {% else %}
-        <p>Faça <a href="{% url 'entrar' %}">login</a> para comentar</p>
+        <p>Faça <a href="{% url 'entrar' %}?next={{ request.path }}">login</a> para comentar</p>
+
     {% endif %}
 
 </div>

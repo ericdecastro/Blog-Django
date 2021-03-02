@@ -24,23 +24,16 @@
                     </li>
                 {% endif %}
             </ul>
-<!--            <form class="search-form" action="{% url 'post_busca' %}">-->
-<!--                <input name="termo" value="{{request.GET.termo}}" class="search-box" type="search"-->
-<!--                       placeholder="Pesquisar..." aria-label="Search">-->
-<!--                <a class="search-btn">-->
-<!--                    <button type="submit" id="search"><i class="fa fa-search search-btn"></i></button>-->
-<!--                </a>-->
-<!--            </form>-->
-                <div class="containersearch">
-                    <div class="searchbox">
-                        <form class="search-form" action="{% url 'post_busca' %}">
-                            <input name="termo" value="{{request.GET.termo}}" autocomplete="off" type="search" class="searchbox__input" placeholder="Pesquisar...">
-                            <button class="searchbox__icon">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </form>
-                    </div>
+            <div class="containersearch">
+                <div class="searchbox">
+                    <form class="search-form" action="{% url 'post_busca' %}">
+                        <input name="termo" value="{{request.GET.termo}}" autocomplete="off" type="search" class="searchbox__input" placeholder="Pesquisar...">
+                        <button class="searchbox__icon">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
                 </div>
+            </div>
         </div>
     </div>
 </nav>
