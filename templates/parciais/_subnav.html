@@ -1,20 +1,20 @@
 {% load static %}
 
-<!--_nav.html-->
-    <div class="subnav-container">
-        <nav class="bd-subnavbar">
-            <div class="container d-flex align-items-md-center py-2">
-                <nav class="nav mx-auto" id="subnav-links">
-                    <a class="subnav-text" href="{% url 'index' %}">Home</a>
-                    <a class="subnav-text" href="{% url 'sobre' %}">Sobre</a>
-                    <a class="subnav-text" href="{% url 'post_categoria' 'python' %}">Python</a>
-                    <a class="subnav-text" href="{% url 'post_categoria' 'django' %}">Django</a>
-                    <a class="subnav-text" href="{% url 'post_categoria' 'tecnologia' %}">Tecnologia</a>
-                    <a class="subnav-text" href="{% url 'post_categoria' 'sistemas' %}">Sistemas</a>
-                </nav>
-            </div>
+<div class="subnav-container">
+    <nav class="bd-subnavbar">
+        <label for="toggle">
+            <i class="fa fa-bars"></i>
+        </label>
+        <input type="checkbox" id="toggle">
+        <nav class="menu">
+            <ul>
+                <li class="noselect"><a id=text1 class="subnav-text" href="{% url 'index' %}">Home</a></li>
+                <li class="noselect"><a class="subnav-text" href="{% url 'sobre' %}">Sobre</a></li>
+                <li class="noselect"><a class="subnav-text" href="{% url 'post_categoria' 'python' %}">Python</a></li>
+                <li class="noselect"><a class="subnav-text" href="{% url 'post_categoria' 'django' %}">Django</a></li>
+                <li class="noselect"><a class="subnav-text" href="{% url 'post_categoria' 'tecnologia' %}">Tecnologia</a></li>
+                <li class="noselect"><a class="subnav-text" href="{% url 'post_categoria' 'sistemas' %}">Sistemas</a></li>
+            </ul>
         </nav>
-    </div>
-<!--/_nav.html-->
-
-
+    </nav>
+</div>

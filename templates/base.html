@@ -12,16 +12,15 @@
 <div class="outerwrapper">
     {% include 'parciais/_nav.html' %}
     {% include 'parciais/_jumbotron.html' %}
-    {% include 'parciais/_subnav.html' %}
+
 
     <!-- Page Content -->
     <div id="page-container">
         <div id="content-wrap">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        {% block conteudo %}{% endblock %}
-                    </div>
+                    {% include 'parciais/_subnav.html' %}
+                    {% block conteudo %}{% endblock %}
                 </div>
             </div>
         </div>

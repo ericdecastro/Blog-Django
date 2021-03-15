@@ -1,5 +1,5 @@
 .card-columns {
-    margin-top: 20px;
+    margin-top: 40px;
     display: grid;
     overflow: hidden;
     grid-template-columns: repeat(3, 1fr);
@@ -10,7 +10,6 @@
 
 @media (max-width: 1000px) {
    .card-columns {
-        margin-top: 20px;
         display: grid;
         overflow: hidden;
         grid-template-columns: repeat(2, 1fr);
@@ -20,9 +19,8 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .card-columns {
-        margin-top: 20px;
         overflow: hidden;
         grid-template-columns: repeat(1, 1fr);
         grid-auto-rows: 1fr;
@@ -67,15 +65,16 @@ body {
     background-color: white;
 }
 
+.row {
+    margin: auto;
+}
+
 .card {
     border: none;
 }
 
 .card-img-top {
     width: 100%;
-    height: 200px;
-    border-top-left-radius: calc(.25rem - 1px);
-    border-top-right-radius: calc(.25rem - 1px);
     object-fit: contain;
 }
 
@@ -102,6 +101,7 @@ a:hover {
 }
 
 .content {
+    position: relative;
     max-width: 800px;
     margin: auto;
     background-color: white;
@@ -159,7 +159,6 @@ a:hover {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
-
 .form-control {
     border-width: 1px; border-color: #343a40;
 }
@@ -176,10 +175,8 @@ a:hover {
     -webkit-box-shadow: #343a40;
 }
 
-
 #conteudo-post {
     font-size: 18px;
-
 }
 
 #excerto-post {
@@ -285,7 +282,6 @@ pre {
 .navbar-dark {
     padding-top: 2px;
     padding-bottom: 2px;
-
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -304,94 +300,13 @@ pre {
     padding-top: 7px;
 }
 
-.bd-subnavbar {
-    border-top: 1px black solid;
-    border-bottom: 1px black solid;
-    margin-bottom: 20px;
-}
-.subnav-container {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-}
 
-.subnav-text {
-    font: Open Sans;
-    text-transform: uppercase;
-    color: black;
-    font-size: 14px;
-    font-weight: 600;
-    padding-right: 30px;
-    padding-left: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.subnav-text:hover {
-    color: grey;
-    text-decoration: none;
-}
-
-@media (max-width: 430px) {
-    .subnav-text {
-        font-size: 14px;
-
-    }
-}
-
-@media (max-width: 370px) {
-    .subnav-text {
-        font-size: 13px;
-        padding-right: 20px;
-    }
-}
-
-@media (max-width: 340px) {
-    .subnav-text {
-        font-size: 12px;
-        padding-right: 20px;
-    }
-}
-
-@media (max-width: 295px) {
-    .subnav-text {
-        font-size: 12px;
-
-    }
-}
-
-@media (max-width: 767px) {
-    #subnav-links  {
-        display: grid;
-        overflow: hidden;
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: 1fr;
-        grid-column-gap: 5px;
-    }
-}
-
-@media (max-width: 330px) {
-    #subnav-links  {
-        display: grid;
-        overflow: hidden;
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 240px) {
-    #subnav-links  {
-        display: grid;
-        overflow: hidden;
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
 
 @media (max-width: 400px) {
     pre {
         font-size: 16px;
     }
 }
-
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -400,7 +315,7 @@ input:-webkit-autofill:active  {
     -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
-.btn{
+.btn {
     margin-bottom: 20px;
 }
 
@@ -420,7 +335,6 @@ input:-webkit-autofill:active  {
 
 
 @media (min-width: 992px) {
-
     .containersearch .searchbox {
         position: relative;
         display: block;
@@ -537,4 +451,285 @@ input:-webkit-autofill:active  {
         color:black;
         transform: translate(-20%, -30%);
     }
+}
+
+#column {
+    float: left;
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#column2 {
+    float: left;
+    width: 50%;
+    padding-left: 80px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+@media (max-width: 992px) {
+    #column {
+        float: left;
+        width: 100%;
+    }
+
+    #column2 {
+        float: left;
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+#fotoeu {
+    width: 100%;
+    padding: 10px;
+}
+
+.nome {
+    padding: 15px;
+}
+
+.titulo {
+    padding: 15px;
+    width: 100%;
+}
+
+.links {
+    padding: 15px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.bio {
+    padding: 15px;
+}
+
+.creditos {
+    padding: 15px;
+}
+
+@media (max-width: 530px) {
+    h1.titulo {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 430px) {
+    h1.titulo {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 330px) {
+    h1.titulo {
+        font-size: 17px;
+    }
+}
+
+
+.fa-linkedin:before {
+    background: #007bb5;
+    color: white;
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    position: relative;
+    bottom: 10px;
+    margin-right: 40px;
+}
+
+.fa-instagram:before {
+    background: #125688;
+    color: white;
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    position: relative;
+    bottom: 10px;
+    margin-right: 40px;
+}
+
+.fa-github:before {
+    background: white;
+    color: black;
+    font-size: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    margin-right: 40px;
+}
+
+@media (max-width: 371px) {
+    .fa-linkedin:before {
+        font-size: 25px;
+        padding: 6px;
+        margin-right: 15px;
+    }
+
+    .fa-instagram:before {
+        font-size: 25px;
+        padding: 6px;
+        margin-right: 15px;
+    }
+
+    .fa-github:before {
+        font-size: 40px;
+        position: relative;
+        bottom: 6px;
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 271px) {
+    .fa-linkedin:before {
+        font-size: 18px;
+        padding: 4px;
+        margin-right: 10px;
+    }
+
+    .fa-instagram:before {
+        font-size: 18px;
+        padding: 4px;
+        margin-right: 10px;
+    }
+
+    .fa-github:before {
+        font-size: 28px;
+        position: relative;
+        bottom: 6px;
+        margin-right: 10px;
+    }
+}
+
+.fa:hover {
+    text-decoration: none;
+}
+
+.fa.fa-bars:before {
+    font-size: 20px;
+    color: black;
+}
+
+#toggle {
+  display: none;
+}
+
+label {
+    color: black;
+    cursor: pointer;
+    margin: -4px 10px;
+    float: right;
+    display: none;
+}
+
+.menu ul {
+    margin-left: -14px;
+}
+
+.menu ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 40px;
+    font: Open Sans;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 20px;
+    padding-bottom: 3px;
+}
+
+.bd-subnavbar {
+    background-color: white;
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+    text-align: center;
+}
+
+.subnav-container {
+    width: 100%;
+}
+
+.subnav-text {
+   color: black;
+   letter-spacing: 1px;
+   display: block;
+}
+
+.subnav-text:hover {
+    color: grey;
+    text-decoration: none;
+}
+
+@media (max-width : 991px) {
+    .menu ul li {
+        margin-right: 25px;
+    }
+    .menu ul {
+        margin-left: -16px;
+    }
+}
+
+@media (max-width : 767px) {
+    label {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu ul {
+        display: none;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .menu ul li {
+        display: block;
+        padding: 5px;
+        margin-bottom: 6px;
+        line-height: 30px;
+        margin: 1px;
+        padding-top:0px;
+    }
+
+    .menu ul li:hover {
+        color: white;
+    }
+
+    .subnav-text:hover {
+        color: white;
+        text-decoration: none;
+        background-color: black;
+    }
+
+    #toggle:checked+.menu ul {
+        display: block;
+    }
+
+    .bd-subnavbar {
+        padding-top:23px;
+        padding-bottom:35px;
+        height: 90%;
+    }
+
+    #text1 {
+        margin-top: 22px;
+    }
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
