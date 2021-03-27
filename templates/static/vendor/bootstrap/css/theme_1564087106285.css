@@ -108,6 +108,13 @@ a:hover {
     padding: 25px;
 }
 
+
+@media (max-width:500px) {
+    .content {
+        max-width: 100%;
+    }
+}
+
 .justify {
     text-align: left;
 }
@@ -165,7 +172,7 @@ a:hover {
 
 .form-control:focus {
     border-color: #343a40;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 4px black;
     -webkit-box-shadow: #343a40;
 }
 
@@ -331,8 +338,6 @@ input:-webkit-autofill:active  {
         font-size: 30px;
     }
 }
-
-
 
 @media (min-width: 992px) {
     .containersearch .searchbox {
@@ -621,7 +626,7 @@ input:-webkit-autofill:active  {
   display: none;
 }
 
-label {
+.label-subnav {
     color: black;
     cursor: pointer;
     margin: -4px 10px;
@@ -679,7 +684,7 @@ label {
 }
 
 @media (max-width : 767px) {
-    label {
+    .label-subnav {
         display: block;
         cursor: pointer;
     }
@@ -732,4 +737,111 @@ label {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+
+@media (max-width : 382px) {
+    .recaptchaContainer {
+        transform:scale(0.9);
+        transform-origin:0 0;
+    }
+}
+
+@media (max-width : 350px) {
+    .recaptchaContainer {
+        transform:scale(0.8);
+        transform-origin:0 0;
+    }
+}
+
+@media (max-width : 320px) {
+    .recaptchaContainer {
+        transform:scale(0.7);
+        transform-origin:0 0;
+    }
+}
+
+@media (max-width : 290px) {
+    .recaptchaContainer {
+        transform:scale(0.6);
+        transform-origin:0 0;
+    }
+}
+
+
+
+
+
+@media (max-width : 445px) {
+    .recaptchaContainer2 {
+        transform:scale(0.9);
+        transform-origin:0 0;
+    }
+}
+
+@media (max-width : 420px) {
+    .recaptchaContainer2 {
+        transform:scale(0.8);
+        transform-origin:0 0;
+    }
+}
+
+@media (max-width : 390px) {
+    .recaptchaContainer2 {
+        transform:scale(0.7);
+        transform-origin:0 0;
+    }
+}
+
+@media (max-width : 365px) {
+    .recaptchaContainer2 {
+        transform:scale(0.65);
+        transform-origin:0 0;
+    }
+}
+
+@media (max-width : 345px) {
+    .recaptchaContainer2 {
+        transform:scale(0.55);
+        transform-origin:0 0;
+    }
+}
+
+@media (max-width : 320px) {
+    .recaptchaContainer2 {
+        transform:scale(0.5);
+        transform-origin:0 0;
+    }
+}
+
+@media (max-width : 290px) {
+    .recaptchaContainer2 {
+        transform:scale(0.45);
+        transform-origin:0 0;
+    }
+}
+
+.alert-danger {
+    width: 100%;
+}
+
+.m-0 {
+    margin: 0!important;
+    padding-left: 00px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+@media (max-width : 340px) {
+    .alert-danger {
+        font-size: 14px;
+    }
+}
+
+.moldura {
+    padding: 25px;
+    border: 1px black solid;
+    border-radius: 10px;
 }

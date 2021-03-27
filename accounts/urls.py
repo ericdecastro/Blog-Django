@@ -4,6 +4,12 @@ from .views import *
 
 urlpatterns = [
     path('cadastro/', RegisterView.as_view(), name='cadastro'),
-    path('entrar/', LoginView.as_view(template_name='accounts/accounts_login.html'), name='entrar'),
+    path('entrar/', LoginView.as_view(
+        template_name='accounts/accounts_login.html',
+        authentication_form=UserLoginForm),
+         name='entrar'
+         ),
     path('sair/', LogoutView.as_view(template_name='accounts/accounts_logout.html'), name='sair'),
 ]
+
+

@@ -163,4 +163,3 @@ AXES_FAILURE_LIMIT = 5
 
 LOGIN_URL = 'entrar'
 LOGIN_REDIRECT_URL = 'index'
-

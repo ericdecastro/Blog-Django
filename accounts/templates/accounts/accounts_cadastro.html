@@ -8,10 +8,19 @@
 {% block conteudo %}
   <div class="content">
     <h1 id="form_h1">Cadastre-se</h1>
-    <form action="" method="POST">
-      {% csrf_token %}
-      {{ form|crispy }}
-      <button type="submit" class="btn btn-dark ">Cadastrar</button>
-    </form>
+    <div class="moldura">
+      <form action="" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="recaptchaContainer2">
+          <div class="g-recaptcha" data-sitekey="6LcWqYAaAAAAAP5O2xsTh96K1zyQ87n8xdd_VBVY"></div>
+          <br/>
+        </div>
+        <button type="submit" class="btn btn-dark ">Cadastrar</button>
+      </form>
+    </div>
   </div>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 {% endblock %}
