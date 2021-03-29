@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+
+import boto3
 from django.contrib.messages import constants
 from decouple import config
 import django_heroku
@@ -172,7 +174,19 @@ django_heroku.settings(locals())
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'django-blog-ericdecastro'
+AWS_S3_REGION_NAME = "ap-south-1"
+AWS_S3_SIGNATURE_VERSION = "s3v4"
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# from botocore.client import Config
+#
+#
+# s3 = boto3.resource(
+#     's3',
+#     aws_access_key_id=config('AWS_ACCESS_KEY_ID'),
+#     aws_secret_access_key=config('AWS_SECRET_ACCESS_KEY'),
+#     config=Config(signature_version='s3v4')
+# )
