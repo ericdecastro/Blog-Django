@@ -2,6 +2,7 @@ from django.core.exceptions import ValidationError
 from django.forms import ModelForm
 from .models import Comentario
 import requests
+from decouple import config
 
 
 class FormComentario(ModelForm):
@@ -12,7 +13,7 @@ class FormComentario(ModelForm):
         recaptcha_request = requests.post(
             'https://www.google.com/recaptcha/api/siteverify',
             data={
-                'secret': '6LcWqYAaAAAAADUGOTCXfPxWiB4yCjdlCPNf2OO_',
+                'secret': config('RECAPTCHA'),
                 'response': recaptcha_response
             }
         )

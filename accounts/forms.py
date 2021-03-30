@@ -2,9 +2,8 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import get_user_model
 import requests
-from django.contrib import messages
 from django.core.exceptions import ValidationError
-
+from decouple import config
 
 User = get_user_model()
 
@@ -22,7 +21,7 @@ class CadastroForm(UserCreationForm):
         recaptcha_request = requests.post(
             'https://www.google.com/recaptcha/api/siteverify',
             data={
-                'secret': '6LcWqYAaAAAAADUGOTCXfPxWiB4yCjdlCPNf2OO_',
+                'secret': config('RECAPTCHA'),
                 'response': recaptcha_response
             }
         )
@@ -48,7 +47,7 @@ class UserLoginForm(AuthenticationForm):
         recaptcha_request = requests.post(
             'https://www.google.com/recaptcha/api/siteverify',
             data={
-                'secret': '6LcWqYAaAAAAADUGOTCXfPxWiB4yCjdlCPNf2OO_',
+                'secret': config('RECAPTCHA'),
                 'response': recaptcha_response
             }
         )

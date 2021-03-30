@@ -12,10 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-
-import boto3
 from django.contrib.messages import constants
-from decouple import config
+from decouple import config, Csv
 import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,7 +29,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['django-blog-ericdecastro.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # Application definition
 
@@ -97,11 +95,11 @@ WSGI_APPLICATION = 'BlogDjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'blog_django',
-        'HOST': '127.0.0.1',
-        'PORT ': '5432',
-        'USER': 'postgres',
-        'PASSWORD': '070707postgres',
+        'NAME': config('DB_NAME'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
 
     }
 }
@@ -170,13 +168,5 @@ LOGIN_URL = 'entrar'
 LOGIN_REDIRECT_URL = 'index'
 
 django_heroku.settings(locals())
-#
-# AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
-# AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
-# AWS_STORAGE_BUCKET_NAME = 'django-blog-ericdecastro2'
-# AWS_S3_SIGNATURE_VERSION = "s3v4"
-#
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = None
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
