@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+
+
+{% block titulo %} {{post.titulo_post | title}} {% endblock %}
+{% block conteudo %}
+
+
+<!-- POST -->
+<div class="content">
+    <div class="text-center pt-4 pb-2">
+        <h1 class="pb-2" id="titulo-post">{{post.titulo_post}}</h1>
+        <pre id="excerto-post">{{post.excerto_post}}</pre>
+        <p class="text-muted mt-4">
+            <small>
+               Por {{post.autor_post}} | {{post.data_post}} | {{post.categoria_post}}
+            </small>
+        </p>
+    </div>
+    <hr id="hr-post">
+    <div class="pt-3">
+
+        {% if post.imagem_post %}
+            <img class="img-fluid pb-2" style="width: 800px" src="{{ post.imagem_post.url }}" alt="{{post.titulo_post}}">
+            <hr>
+        {% endif %}
+
+        <pre>{{ post.conteudo_post }}</pre>
+
+    </div>
+
+    {% if comentarios %}
+    <div class="pt-3">
+        <h2 class="my-3 mb-4">{{comentarios.count}} Comentários </h2>
+        <hr>
+        {% for comentario in comentarios %}
+            <h5 class="mb-2 mt-2">{{comentario.usuario_comentario}} disse:</h5>
+            <small class="text-muted">{{comentario.data_comentario}}</small>
+            <p class="mb-1">{{comentario.comentario}}</p>
+            <hr>
+        {% endfor %}
+
+    </div>
+    {% else %}
+        <hr>
+        <p>Nenhum comentário ainda</p>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+    <h4 class="my-5">Deixe um comentário</h4>
+    <div>
+        <form method="POST" action="#envia_comentario">
+           {% csrf_token %}
+            <table class="table">
+                {{form|crispy}}
+                <div class="recaptchaContainer">
+                    <div class="g-recaptcha" data-sitekey="6LcWqYAaAAAAAP5O2xsTh96K1zyQ87n8xdd_VBVY"></div>
+                    <br/>
+                </div>
+                <tr>
+                    <td colspan="2">
+                        <input id="envia-comentario" type="submit" class="btn btn-dark"
+                            value="Enviar">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    {% else %}
+        <p>Faça <a href="{% url 'entrar' %}?next={{ request.path }}">login</a> para comentar</p>
+    {% endif %}
+
+</div>
+<!-- POST -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}

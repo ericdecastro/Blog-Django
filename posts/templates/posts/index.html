@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load myfilters %}
+{% block conteudo %}
+
+
+<!-- CONTENT -->
+    <div class="card-columns">
+        {% if not posts %}
+            <p>Nenhum resultado para busca sobre "{{ request.GET.termo }}"</p>
+        {% endif %}
+        {% for post in posts %}
+        <div class="card mb-4">
+            {% if post.imagem_post %}
+            <a href="{% url 'post_detalhes' post.id %}">
+                <img class="card-img-top"
+                     src="{{ post.imagem_post.url }}"
+                     alt="{{ post.titulo_post }}">
+            </a>
+            {% endif %}
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a class="post_titulo" href="{% url 'post_detalhes' post.id %}">
+                        {{ post.titulo_post }}
+                    </a>
+                </h4>
+                <p class="card-text">{{post.excerto_post}}</p>
+                <p class="card-text">
+                    <small class="text-muted">{{ post.data_post | naturalday | title}}
+                        | {{post.numero_comentarios | plural_comentarios}}
+                        | {{post.categoria_post}}</small>
+                </p>
+
+                <div class="text-right">
+                    <a href="{% url 'post_detalhes' post.id %}" class="btn btn-outline-dark">Ler mais...</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+<!--/CONTENT-->
+    <div class="mb-4">
+        {% include 'parciais/_pagination.html' %}
+    </div>
+{% endblock %}

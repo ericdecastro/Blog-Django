@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block conteudo %}
+
+    <div id="column">
+        <img id="fotoeu" src="{% static 'fotoeu.jpg' %}" alt="foto">
+    </div>
+
+    <div id="column2">
+        <div class="nome">Eric de Castro</div>
+
+        <h1 class="titulo">Desenvolvedor Django </h1>
+
+        <p class="bio">Donec at libero id lectus porta dapibus eu in nibh.
+            Cras id mauris sapien. Fusce viverra ac rutrum.
+            Duis semper elit eu mi facilisis eleifend.
+            Donec semper, malesuada congue, ullamcorper massa,
+            sit amet lacinia nibh enim sed massa. </p>
+
+        <div class="links">
+            <a href="http://linkedin.com/in/eric-de-castro8574a2a6" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="http://www.instagram.com/ericdecastro88/" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="http://github.com/ericdecastro" target="_blank"><i class="fa fa-github"></i></a>
+
+        </div>
+
+        <div class="creditos">
+          ©2020 Eric de Castro
+        </div>
+    </div>
+
+{% endblock %}
